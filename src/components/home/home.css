@@ -1,0 +1,29 @@
+.photos-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    padding: 10px;
+}
+
+.post-wrapper {
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.post-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.post-body {
+    font-size: 12px;
+}
