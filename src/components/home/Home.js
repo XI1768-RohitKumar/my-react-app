@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getPhotoData, getPostData } from "./../../redux/actions/homeAction";
+import { getPhotoData, getPostData,setItem } from "./../../redux/actions/homeAction";
 import PhotoContainer from "./photos/PhotoContainer";
 import Loader from "react-loader-spinner";
 import { Link } from "react-router-dom";
@@ -61,8 +61,14 @@ class Home extends Component {
                     </li>
                 </ul>
 
+                <ul style={{ listStyleType: "none", padding: 0, flexDirection: 'row' }}>
+                    <li>
+                        <Link to="/login">Logout</Link>
+                    </li>
+                </ul>
+
                 {this.state.isPhotosClicked && list && list.length !== 0 && <PhotoContainer list={list} />}
-                {this.state.isPostClicked && postList && postList.length !== 0 && <PostContainer postList={postList} />}
+                {this.state.isPostClicked && postList && postList.length !== 0 && <PostContainer postList={postList} storeItem={(item)=>this.props.setItem(item)}/>}
                 {isLoading && (
                     <Loader
                         type="Rings"
@@ -83,7 +89,9 @@ const mapStateToProps = (state) => ({
     error: state.homeReducer.error,
 });
 const mapDispatchToProps = {
-    getPhotoData, getPostData
+    getPhotoData, 
+    getPostData,
+    setItem
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

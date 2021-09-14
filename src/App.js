@@ -9,6 +9,7 @@ import {
   Link
 } from "react-router-dom";
 import PhotoDetails from './components/home/PhotoDetails';
+import PostDetails from './components/home/posts/PostDetails';
 import PostContainer from './components/home/posts/PostContainer';
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
       <Router>
       <Switch>
           <Route exact path="/">
+            <Login />
+          </Route>
+          <Route exact path="/login">
             <Login />
           </Route>
           <Route path="/home">
@@ -33,6 +37,9 @@ function App() {
           </Route>
           <Route path="/photo-details/:id">
             <PhotoDetails />
+          </Route>
+          <Route path="/posts-details/:id">
+            <PostDetails />
           </Route>
         </Switch>
         </Router>

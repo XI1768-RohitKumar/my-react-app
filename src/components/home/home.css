@@ -27,3 +27,21 @@
 .post-body {
     font-size: 12px;
 }
+.card-container{
+    text-align: left;
+    padding: 5px;
+}
+.card{
+    height:100px;
+    margin:20px;
+    border:1px solid black;
+    padding:5px;
+   
+}
+.wrapper{
+    padding:10px;
+}
+.text{
+    font-size: 14;
+    color: brown;
+}

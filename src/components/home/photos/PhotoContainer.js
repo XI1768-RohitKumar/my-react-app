@@ -9,7 +9,7 @@ const PhotoContainer = ({ list }) => {
       <div className="photos-container">
         {list.length &&
           list.map((item, index) => (
-            <div onClick={() => { history.push(`/photo-details/${item.id}`, item) }}>
+            <div key={index} onClick={() => { history.push(`/photo-details/${item.id}`, item) }}>
               <img src={item.thumbnailUrl} key={index} alt="thumbnail" />
             </div>
           ))}
